@@ -10,21 +10,8 @@ namespace sharp
     {
         static void Main(string[] args)
         {
-            int userTime = (Convert.ToInt32(Console.ReadLine())); // Считываем ввод пользователя
-            int hourTime = userTime / 60; // Создаем переменную для вывода часов
-            if (userTime < 1440) // Проверка переменной на валидность 
-            {
-                Console.WriteLine("\tCorrect time >> " + hourTime + " : " + (userTime % 60)); //Вывод в случае валидности
-            }
-            else if (userTime >= 1440) { 
-                while (hourTime >= 24) {
-                    hourTime -= 24;
-                }
-                Console.WriteLine("\tCorrect time >> " + hourTime + " : " + (userTime % 60)); //Вывод в случае невалидности
-            } else {
-                Console.WriteLine("Error..."); // Вывод в остальных случаях
-            }
-            Console.WriteLine("Succes");
+            int userTime = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("\tCorrect time >> " + (userTime < 1440 ? userTime/60 : (userTime % 1440)/60) + " : " + (userTime % 60));
         }
     }
 }
