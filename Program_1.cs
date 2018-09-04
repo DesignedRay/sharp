@@ -11,7 +11,7 @@ namespace sharp
         static void Main(string[] args)
         {
             int userTime = Convert.ToInt32(Console.ReadLine());
-            Console.WriteLine((userTime < 1440 ? userTime/60 : (userTime % 1440)/60) + " : " + (userTime % 60));
+            Console.WriteLine((userTime % 1440/60) + " : " + (userTime % 60));
         }
     }
 }
