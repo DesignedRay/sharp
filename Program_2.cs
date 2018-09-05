@@ -18,7 +18,6 @@ namespace sharp_2
                 else Console.WriteLine("2");
             }
             else Console.WriteLine("0");
-            Console.ReadKey();
         }
     }
 }
