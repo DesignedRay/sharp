@@ -4,14 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace sharp
+namespace sharpModified
 {
     class Program
     {
         static void Main(string[] args)
         {
-            int userTime = Convert.ToInt32(Console.ReadLine());
-            Console.WriteLine((userTime % 1440/60) + " : " + (userTime % 60));
+            long userInputSeconds = Convert.ToInt64(Console.ReadLine());
+            Console.WriteLine((userInputSeconds /60 % 1440 / 60) + " : " + (userInputSeconds / 60 % 60) + " : " + (userInputSeconds % 60));
         }
     }
 }
