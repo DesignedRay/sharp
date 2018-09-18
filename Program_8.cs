@@ -27,6 +27,9 @@ namespace sharp4
                 case "/":
                     Console.WriteLine(x1 / x2);
                     break;
+			    case "//":
+                    Console.WriteLine(x1 % x2);
+                    break;
             }
             Console.ReadKey();
         }
