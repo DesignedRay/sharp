@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.IO;
 
 namespace sharp4
 {
@@ -10,25 +7,39 @@ namespace sharp4
     {
         static void Main(string[] args)
         {
-                int x1 = int.Parse(Console.ReadLine());
-                Console.WriteLine("Аргументов 1/2");
-                int x2 = int.Parse(Console.ReadLine());
-                Console.WriteLine("Аргументов 2/2");
-                String userInput = Console.ReadLine();
-                switch (userInput)
-                {
-                    case "+":
-                        Console.WriteLine(x1 + x2);
-                        break;
-                    case "-":
-                        Console.WriteLine(x1 - x2);
-                        break;
-                    case "*":
-                        Console.WriteLine(x1 * x2);
-                        break;
-                    case "/":
-                        Console.WriteLine(x1 / x2);
-                        break;
+            int x1 = TryInputInt();
+            int x2 = TryInputInt();
+            String userInput = Console.ReadLine();
+            switch (userInput)
+            {
+                default:
+                    Console.WriteLine("An incorrect expression was entered...");
+                    break;
+                case "+":
+                    Console.WriteLine(x1 + x2);
+                    break;
+                case "-":
+                    Console.WriteLine(x1 - x2);
+                    break;
+                case "*":
+                    Console.WriteLine(x1 * x2);
+                    break;
+                case "/":
+                    Console.WriteLine(x1 / x2);
+                    break;
+            }
+            Console.ReadKey();
+        }
+        static public int TryInputInt() {
+            string x = Console.ReadLine();
+            if (int.TryParse(x, out int result))
+            {
+                return int.Parse(x);
+            }
+            else
+            {
+                Console.WriteLine("Строка не являеться числом преобразовано в 0");
+                return 0; 
             }
         }
     }
